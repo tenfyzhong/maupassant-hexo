@@ -1,0 +1,14 @@
+if theme.copyright == ture
+  div(class='copyright')
+    ul.post-copyright
+      li.post-copyright-author
+        strong= __('copyright.author') + __('symbol.colon')
+        = config.author
+      li.post-copyright-link
+        strong= __('copyright.link') + __('symbol.colon')
+        a(href="#{page.permalink}", title="#{page.title}")= page.permalink
+      li.post-copyright-license
+        strong= __('copyright.license_title') + __('symbol.colon')
+        = __('copyright.license_content_begin')
+        a(href='https://creativecommons.org/licenses/by-nc-sa/3.0/', rel='external nofollow', target='_blank') CC BY-NC-SA 3.0
+        = __('copyright.license_content_end')  

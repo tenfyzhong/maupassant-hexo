@@ -1714,3 +1714,19 @@ em.search-keyword {
   background-color: #999999;
   text-shadow: 0
 }
+
+.copyright {
+  margin-bottom: 2em;
+}
+
+.post-copyright {
+  margin: 2em 0 0;
+  padding: .5em 1em;
+  background-color: #f9f9f9;
+  list-style: none;
+  border-left: 3px solid #ff1700;
+}
+
+.post-copyright li {
+    margin: .5em 0em .5em 0em;
+}
