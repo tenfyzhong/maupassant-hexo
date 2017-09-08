@@ -53,11 +53,20 @@ menu:
     icon: fa-rss
 
 widgets: ## Six widgets in sidebar provided: search, category, tag, recent_posts, rencent_comments and links.
+  - socials
   - search
   - category
   - tag
   - recent_posts
   - recent_comments
+
+socials:
+  - title: Github
+    url: https://github.com/tenfyzhong
+    icon: github
+  - title: E-Mail
+    url: mailto:tenfyzhong@qq.com
+    icon: envelope
 
 # links:
 #   - title: site-name1

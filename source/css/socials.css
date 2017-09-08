@@ -1,0 +1,13 @@
+.fa-envelope:before {
+  font-family: "FontAwesome";
+  content: "\f0e0";
+  padding-right: 0.3em;
+  margin-right: 0.1em;
+}
+.fa-github:before {
+  font-family: "FontAwesome";
+  content: "\f09b";
+  padding-right: 0.3em;
+  margin-right: 0.1em;
+}
+
