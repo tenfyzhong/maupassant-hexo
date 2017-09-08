@@ -17,7 +17,7 @@ block content
           span#busuanzi_value_page_pv
           span= ' ' + __('Hits')
       span#page-wordcount= ' | '
-        span#page-wordcount-page-value= wordcount(page.content)
+        span#page-wordcount-page-value= wordcount(page.content) + ' '
         | 字
     if theme.disqus
       a.disqus-comment-count(data-disqus-identifier=page.path, href=url_for(page.path) + '#disqus_thread')
