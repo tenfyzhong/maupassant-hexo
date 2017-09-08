@@ -1,2 +1,5 @@
 #footer= 'Copyright © ' + date(Date.now(), 'YYYY') + ' '
-  a(href=url_for('.'), rel='nofollow')= config.title
+  a#title(href=url_for('.'), rel='nofollow')= config.title
+  | |
+  span#total-count-title Site words total count
+  span#total-count-value= totalcount(site, '0, 0.0a')

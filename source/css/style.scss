@@ -229,6 +229,13 @@ div {
               padding-right: 0.3em;
             }
         }
+        #page-wordcount-page-value {
+            &:before {
+                font-family: "FontAwesome";
+                content: "\f1c2";
+                padding-right: 0.3em;
+            }
+        }
     }
     .ds-thread-count {
         padding: 0;
@@ -411,6 +418,19 @@ div {
     text-align: center;
     span {
         font-size: .9em;
+    }
+    #title {
+        margin-right: .5em;
+    }
+    #total-count-title {
+        font-size: 1em;
+        margin-left: .5em;
+        margin-right: .2em;
+        &:before {
+            font-family: "FontAwesome";
+            content: "\f1fe";
+            padding-right: 0.3em;
+        }
     }
 }
 
