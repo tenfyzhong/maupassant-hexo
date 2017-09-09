@@ -77,22 +77,23 @@ function setSiteView(visitor, count) {
   var view = sessionStorage.getItem(url);
   if (view !== null && view > 0) {
     $element.find(count).text(view);
-    document.getElementById('site-visitors-count').style.visibility = 'visible';
     return true;
   }
   return false;
 }
 
 $(function() {
+  var $siteVisitor = $(document.getElementById('site-visitors-count'));
+  $siteVisitor.on('DOMSubtreeModified', function(){
+    $siteVisitor.show();
+  });
+
   var VISITOR_ELEMENT = '.leancloud-visitors';
   var COUNT_ELEMENT = '.leancloud-visitors-count';
 
-  var siteViewSeted = setSiteView(VISITOR_ELEMENT, COUNT_ELEMENT);
+  setSiteView(VISITOR_ELEMENT, COUNT_ELEMENT);
 
   var Counter = AV.Object.extend('Counter');
   processCounter(Counter, VISITOR_ELEMENT, COUNT_ELEMENT);
-  if (!siteViewSeted) {
-    document.getElementById('site-visitors-count').style.visibility = 'visible';
-  }
 });
 
