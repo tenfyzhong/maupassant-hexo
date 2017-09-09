@@ -25,8 +25,6 @@ function hasIncrement(url) {
 
 
 function increment(counter) {
-  console.log('increment: ');
-  console.log(counter);
   counter.fetchWhenSave(true);
   counter.increment('time');
   counter.save(null, {
@@ -56,7 +54,6 @@ function setCount(Counter, url, countElement) {
 
   newcounter.save(null, {
     success: function(newcounter) {
-      console.log('save success, title: ' + title + ' url: ' + url);
       $element.find(countElement).text(newcounter.get('time'));
     },
     error: function(newcounter, error) {
@@ -87,7 +84,6 @@ function processCounter(Counter, visitorElement, countElement) {
         $element.find(countElement).text(counter.get('time'));
       });
       entries.forEach(function(entrie){
-        console.log('set entrie: ' + entrie)
         if (!processed[entrie]) {
           setCount(Counter, entrie, countElement);
         }
@@ -99,7 +95,6 @@ function setSiteView(visitor, count) {
   var $element = $(document.getElementById('site-visitors-count'));
   var url = $element.find(visitor).attr('id').trim();
   var view = hasIncrement(url);
-  console.log(view);
   if (view > 0) {
     $element.find(count).text(view);
     document.getElementById('site-visitors-count').style.visibility = 'visible';
