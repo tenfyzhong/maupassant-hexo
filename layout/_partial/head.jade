@@ -15,6 +15,12 @@ head
     script(type='text/javascript', src='//cdn.bootcss.com/jquery/3.2.1/jquery.min.js')
     if theme.busuanzi == true
       script(src='https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js', async)
+    if theme.leancloud.enable == true
+      script(src='https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js', async)
+      script.
+        AV.initialize('#{theme.leancloud.appid}', '#{theme.leancloud.appkey}');
+  script(type='text/javascript', src=url_for(theme.js)+'/leancloud.js?='+theme.version)
+
     link(rel='Shortcut Icon', type='image/x-icon', href=url_for('favicon.ico'))
     link(rel='apple-touch-icon', href=url_for('apple-touch-icon.png'))
     link(rel='apple-touch-icon-precomposed', href=url_for('apple-touch-icon.png'))
