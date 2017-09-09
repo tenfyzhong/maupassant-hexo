@@ -71,23 +71,23 @@ function processCounter(Counter, visitorElement, countElement) {
     });
 }
 
-function checkSiteCount(visitor, count) {
+function setSiteView(visitor, count) {
   var $element = $(document.getElementById('site-visitors-count'));
   var url = $element.find(visitor).attr('id').trim();
-  var count = sessionStorage.getItem(url);
-  if (count !== null) {
-    $element.find(count).text(count);
+  var view = sessionStorage.getItem(url);
+  if (view !== null) {
+    $element.find(count).text(view);
     document.getElementById('site-visitors-count').style.visibility = 'visible';
     return true;
   }
   return false;
 }
 
-$(document).ready(function() {
+$(function() {
   var VISITOR_ELEMENT = '.leancloud-visitors';
   var COUNT_ELEMENT = '.leancloud-visitors-count';
 
-  var siteViewSeted = checkSiteCount(VISITOR_ELEMENT, COUNT_ELEMENT);
+  var siteViewSeted = setSiteView(VISITOR_ELEMENT, COUNT_ELEMENT);
 
   var Counter = AV.Object.extend('Counter');
   processCounter(Counter, VISITOR_ELEMENT, COUNT_ELEMENT);
