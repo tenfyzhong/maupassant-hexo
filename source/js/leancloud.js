@@ -75,7 +75,7 @@ function setSiteView(visitor, count) {
   var $element = $(document.getElementById('site-visitors-count'));
   var url = $element.find(visitor).attr('id').trim();
   var view = sessionStorage.getItem(url);
-  if (view !== null) {
+  if (view !== null && view > 0) {
     $element.find(count).text(view);
     document.getElementById('site-visitors-count').style.visibility = 'visible';
     return true;
