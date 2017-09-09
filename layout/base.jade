@@ -24,10 +24,15 @@ html(lang='#{config.language}')
         h1.hidden= current_title
         a#logo(href=url_for('.'))= config.title
         p.description= config.subtitle
-      if theme.busuanzi == true
-        #counter
+      #site-visitors-count
+        if theme.busuanzi == true
           span#busuanzi_container_site_pv 您是第
-            span#busuanzi_value_site_pv 0
+            span#busuanzi_value_site_pv.site-visitors-count 0
+            | 位访客
+        else if theme.leancloud.enable = true
+          span#leancloud-visitors-eye 
+          span.leancloud-visitors(id=config.url, data-flag-title=config.title) 您是第
+            span.leancloud-visitors-count.site-visitors-count 0
             | 位访客
       #nav-menu
         - for (var i in theme.menu)

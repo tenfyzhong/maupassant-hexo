@@ -82,9 +82,15 @@ div {
             color: #999;
         }
     }
-    #counter {
+    #site-visitors-count {
       margin-right: 1em;
       margin-bottom: .5em;
+      visibility: hidden;
+      .site-visitors-count {
+          margin-left: .3em;
+          margin-right: .3em;
+          font-weight: bold;
+      }
     }
     #nav-menu {
         margin: 10px 0 -1px;
@@ -1755,8 +1761,10 @@ em.search-keyword {
   margin: .5em 0em .5em 0em;
 }
 
-#busuanzi_value_site_pv {
-    margin-left: .3em;
-    margin-right: .3em;
-    font-weight: bold;
+#leancloud-visitors-eye {
+    &:before {
+        font-family: "FontAwesome";
+        content: "\f06e";
+    }
 }
+

@@ -61,5 +61,11 @@ if page.mathjax
 if page.mathjax2
   include mathjax2
 
+if theme.leancloud.enable == true
+  script(src='https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js')
+  script.
+    AV.initialize('#{theme.leancloud.appid}', '#{theme.leancloud.appkey}');
+  script(type='text/javascript', src=url_for(theme.js)+'/leancloud.js?='+theme.version)
+
 script(type='text/javascript', src=url_for(theme.js) + '/codeblock-resizer.js' + '?v=' + theme.version)
 script(type='text/javascript', src=url_for(theme.js) + '/smartresize.js' + '?v=' + theme.version)
