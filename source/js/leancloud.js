@@ -32,7 +32,9 @@ function setCount(Counter, url, countElement) {
 
   newcounter.save(null, {
     success: function(newcounter) {
-      $element.find(countElement).text(newcounter.get('time'));
+      var time = newcounter.get('time');
+      $element.find(countElement).text(time);
+      sessionStorage.setItem(url, time);
     },
     error: function(newcounter, error) {
       $element.find(countElement).text(0);
