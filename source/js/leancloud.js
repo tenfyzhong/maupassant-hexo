@@ -2,34 +2,12 @@ function incrementedKey(url) {
   return 'v_url' + escape(url);
 }
 
-function setIncremented(url, time) {
-  document.cookie = incrementedKey(url) + '=' + time;
-}
-
-function hasIncrement(url) {
-  if (document.cookie.length == 0) {
-    return -1;
-  }
-  var key = incrementedKey(url);
-  var c_start = document.cookie.indexOf(key + '=');
-  if (c_start == -1) {
-    return -1;
-  }
-  var c_start = document.cookie.indexOf('=', c_start);
-  var c_end = document.cookie.indexOf(';', c_start);
-  if (c_end == -1) {
-    c_end = document.cookie.length;
-  }
-  return document.cookie.substring(c_start+1, c_end);
-}
-
-
 function increment(counter) {
   counter.fetchWhenSave(true);
   counter.increment('time');
   counter.save(null, {
     success: function(counter) {
-      setIncremented(counter.get('url'), counter.get('time'));
+      sessionStorage.setItem(counter.get('url'), counter.get('time'));
     },
     error: function(counter, error) {
       console.log('Failed to save Visitor num, with error message: ' + error.message);
@@ -78,7 +56,7 @@ function processCounter(Counter, visitorElement, countElement) {
       results.forEach(function(counter) {
         processed[counter.get('url')] = true;
         var $element = $(document.getElementById(counter.get('url')));
-        if (hasIncrement(counter.get('url')) <= 0) {
+        if (!sessionStorage.getItem(counter.get('url'))) {
           increment(counter);
         }
         $element.find(countElement).text(counter.get('time'));
@@ -94,8 +72,8 @@ function processCounter(Counter, visitorElement, countElement) {
 function setSiteView(visitor, count) {
   var $element = $(document.getElementById('site-visitors-count'));
   var url = $element.find(visitor).attr('id').trim();
-  var view = hasIncrement(url);
-  if (view > 0) {
+  var view = sessionStorage.getItem(url);
+  if (view !== null) {
     $element.find(count).text(view);
     document.getElementById('site-visitors-count').style.visibility = 'visible';
     return true;
