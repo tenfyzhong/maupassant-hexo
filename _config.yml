@@ -63,10 +63,10 @@ widgets: ## Six widgets in sidebar provided: search, category, tag, recent_posts
 socials:
   - title: Github
     url: https://github.com/tenfyzhong
-    icon: github
+    icon: fa-github
   - title: E-Mail
     url: mailto:tenfyzhong@qq.com
-    icon: envelope
+    icon: fa-envelope
 
 leancloud:
   enable: true

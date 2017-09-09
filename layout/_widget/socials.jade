@@ -1,5 +1,5 @@
 .widget#socials
   - for (var i in theme.socials)
     span.pure-u-1-2
-      a(href='#{theme.socials[i].url}' title='#{theme.socials[i].title}' target='_blank' class='fa-#{theme.socials[i].icon}') #{theme.socials[i].title}
+      a(href='#{theme.socials[i].url}' title='#{theme.socials[i].title}' target='_blank' class='#{theme.socials[i].icon}') #{theme.socials[i].title}
 
