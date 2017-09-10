@@ -85,7 +85,7 @@ function setSiteView(visitor, count) {
 $(function() {
   var $siteVisitor = $(document.getElementById('site-visitors-count'));
   $siteVisitor.on('DOMSubtreeModified', function(){
-    $siteVisitor.show();
+    $siteVisitor.css("visibility", "visible")
   });
 
   var VISITOR_ELEMENT = '.leancloud-visitors';
