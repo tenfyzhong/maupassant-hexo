@@ -1,5 +1,5 @@
 .widget#socials
   - for (var i in theme.socials)
     span.pure-u-1-2
-      - var target = theme.socials[i].target ? theme.socials[i].target : '_blank'
+      - var target = theme.socials[i].url.startsWith('http') ? '_blank' : '_self'
         a(href='#{theme.socials[i].url}' title='#{theme.socials[i].title}' target='#{target}' class='#{theme.socials[i].icon}') #{theme.socials[i].title}

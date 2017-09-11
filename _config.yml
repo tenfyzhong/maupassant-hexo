@@ -67,7 +67,6 @@ socials:
   - title: E-Mail
     url: mailto:tenfy@tenfy.cn
     icon: fa-envelope
-    target: _self
 
 leancloud:
   enable: true
