@@ -6,16 +6,13 @@ function increment(counter) {
   counter.fetchWhenSave(true);
   counter.increment('time');
   counter.save(null, {
-    success: function(counter) {
-      sessionStorage.setItem(counter.get('url'), counter.get('time'));
-    },
     error: function(counter, error) {
       console.log('Failed to save Visitor num, with error message: ' + error.message);
     }
   });
 }
 
-function setCount(Counter, url, countElement) {
+function setCount(Counter, url) {
   var newcounter = new Counter();
 
   var acl = new AV.ACL();
@@ -31,16 +28,12 @@ function setCount(Counter, url, countElement) {
   newcounter.set('time', 1);
 
   newcounter.save(null, {
-    success: function(newcounter) {
-      var time = newcounter.get('time');
-      $element.find(countElement).text(time);
-      sessionStorage.setItem(url, time);
-    },
     error: function(newcounter, error) {
-      $element.find(countElement).text(0);
       console.log('Failed to create, ' + error.message);
     }
   });
+
+  return newcounter
 }
 
 function processCounter(Counter, visitorElement, countElement) {
@@ -57,15 +50,19 @@ function processCounter(Counter, visitorElement, countElement) {
       var processed = {}
       results.forEach(function(counter) {
         processed[counter.get('url')] = true;
-        var $element = $(document.getElementById(counter.get('url')));
         if (!sessionStorage.getItem(counter.get('url'))) {
           increment(counter);
         }
+        var $element = $(document.getElementById(counter.get('url')));
         $element.find(countElement).text(counter.get('time'));
+        sessionStorage.setItem(counter.get('url'), counter.get('time'));
       });
       entries.forEach(function(entrie){
         if (!processed[entrie]) {
-          setCount(Counter, entrie, countElement);
+          counter = setCount(Counter, entrie);
+          var $element = $(document.getElementById(entrie));
+          $element.find(countElement).text(counter.get('time'));
+          sessionStorage.setItem(counter.get('url'), counter.get('time'));
         }
       });
     });
