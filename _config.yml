@@ -58,7 +58,7 @@ widgets: ## Six widgets in sidebar provided: search, category, tag, recent_posts
   - category
   - tag
   - recent_posts
-  - recent_comments
+  - wechat_official_account
 
 socials:
   - title: Github
@@ -67,6 +67,8 @@ socials:
   - title: E-Mail
     url: mailto:tenfy@tenfy.cn
     icon: fa-envelope
+
+wechat_official_account: 'http://wx4.sinaimg.cn/mw690/69472223ly1fjln65j35xj20760763yz.jpg'
 
 leancloud:
   enable: true
