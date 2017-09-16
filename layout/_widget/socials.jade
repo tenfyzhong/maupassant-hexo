@@ -1,5 +1,16 @@
+mixin socials(href, content, icon)
+  if (href.startsWith('mailto:'))
+    a(href=href target='_self')
+      i(class='socials-item fa ' + icon)= ' ' + content
+  else if (href == 'atom.xml')
+    a#to_copy(href='javascript:void(0)' data-clipboard-action='copy' data-clipboard-text=config.url + url_for(href))
+      i(class='socials-item fa ' + icon)= ' ' + content
+  else
+    a(href=href target='_blank')
+      i(class='socials-item fa ' +icon)= ' ' + content
+
 .widget#socials
   - for (var i in theme.socials)
-    span.pure-u-1-2
-      - var target = theme.socials[i].url.startsWith('http') ? '_blank' : '_self'
-        a(href='#{theme.socials[i].url}' title='#{theme.socials[i].title}' target='#{target}' class='#{theme.socials[i].icon}') #{theme.socials[i].title}
+    span.socials-span.pure-u-1-2
+      +socials(theme.socials[i].url, theme.socials[i].title, theme.socials[i].icon)
+

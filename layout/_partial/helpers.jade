@@ -9,6 +9,9 @@ mixin a_with_current(href, content, id)
   else if (href == 'archives/' && is_category())
     a.current(href=url)
       i(class='fa' + ' ' + id)= ' ' + content
+  else if (href == 'atom.xml')
+    a#to_copy(href='javascript:void(0)' data-clipboard-action='copy' data-clipboard-text=config.url + url)
+      i(class='fa' + ' ' + id)= ' ' + content
   else
     a(href=url)
       i(class='fa' + ' ' + id)= ' ' + content

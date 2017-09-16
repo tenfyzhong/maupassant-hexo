@@ -67,6 +67,9 @@ socials:
   - title: E-Mail
     url: mailto:tenfy@tenfy.cn
     icon: fa-envelope
+  # - title: RSS
+  #   url: atom.xml
+  #   icon: fa-rss
 
 wechat_official_account: 'http://wx4.sinaimg.cn/mw690/69472223ly1fjln65j35xj20760763yz.jpg'
 
