@@ -71,7 +71,7 @@ socials:
   #   url: atom.xml
   #   icon: fa-rss
 
-wechat_official_account: 'http://wx4.sinaimg.cn/mw690/69472223ly1fjln65j35xj20760763yz.jpg'
+wechat_official_account: 'https://wx4.sinaimg.cn/mw690/69472223ly1fjln65j35xj20760763yz.jpg'
 
 leancloud:
   enable: true
