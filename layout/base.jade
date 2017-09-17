@@ -30,8 +30,9 @@ html(lang='#{config.language}')
             span#busuanzi_value_site_pv.site-visitors-count 0
             | 位访客
         else if theme.leancloud.enable = true
+          - var url = config.url.substr(config.url.indexOf('//')+2)
           span#leancloud-visitors-eye 
-          span.leancloud-visitors(id=config.url, data-flag-title=config.title) 您是第
+          span.leancloud-visitors(id=url, data-flag-title=config.title) 您是第
             span.leancloud-visitors-count.site-visitors-count 0
             | 位访客
       #nav-menu
