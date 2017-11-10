@@ -2,6 +2,6 @@
   a#title(href=url_for('.'), rel='nofollow')= config.title
   span.hidden_mid_and_down | 
   if config.beian
-    a#title.hidden_mid_and_down(href='http://www.miitbeian.gov.cn/', target='_blank')= config.beian + '|'
+    a#title.hidden_mid_and_down(href='http://www.miitbeian.gov.cn/', target='_blank')= config.beian + ' |'
   span#total-count-title.hidden_mid_and_down Site words total count
   span#total-count-value.hidden_mid_and_down= totalcount(site, '0, 0.0a')
