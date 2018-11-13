@@ -11,7 +11,8 @@ if theme.gitalk.enable == true
         owner: '#{theme.gitalk.owner}',
         admin: ['#{theme.gitalk.owner}'],
         id: window.location.pathname,      
-        distractionFreeMode: false  
+        distractionFreeMode: false,
+        labels: ['comment']
       })
       gitalk.render('container')
 
