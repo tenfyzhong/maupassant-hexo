@@ -12,7 +12,7 @@ if theme.gitalk.enable == true
         admin: ['#{theme.gitalk.owner}'],
         id: window.location.pathname,      
         distractionFreeMode: false,
-        labels: ['comment']
+        labels: ['comment'],
       })
       gitalk.render('container')
 
@@ -29,6 +29,7 @@ if theme.gitment.enable == true
           client_id: '#{theme.gitment.client_id}',
           client_secret: '#{theme.gitment.client_secret}',
         },
+        labels: ['comment'],
       })
       gitment.render('container')
 
