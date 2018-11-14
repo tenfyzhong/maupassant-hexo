@@ -1,17 +1,15 @@
 fancybox: true ## If you want to use fancybox please set the value to true.
 disqus: ## Your disqus_shortname, e.g. username
+comment_repo:
+  owner: tenfyzhong
+  repo: tenfyzhong.github.io
+  client_id: 6b972eaf9e2408260435
+  client_secret: 4a1fc9cba603e6c23d8c22873c9eb0d1e82b8662
+  label: 'comment'
 gitment:
   enable: false
-  owner: tenfyzhong
-  repo: tenfyzhong.github.io
-  client_id: 6b972eaf9e2408260435
-  client_secret: 4a1fc9cba603e6c23d8c22873c9eb0d1e82b8662
 gitalk:
   enable: true
-  owner: tenfyzhong
-  repo: tenfyzhong.github.io
-  client_id: 6b972eaf9e2408260435
-  client_secret: 4a1fc9cba603e6c23d8c22873c9eb0d1e82b8662
 uyan: ## Your uyan_id. e.g. 1234567
 livere: ## Your livere data-uid, e.g. MTAyMC8zMDAxOC78NTgz
 changyan: ## Your changyan appid, e.g. cyrALsXc8

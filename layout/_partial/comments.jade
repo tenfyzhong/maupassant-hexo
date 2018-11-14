@@ -7,12 +7,12 @@ if theme.gitalk.enable == true
       var gitalk = new Gitalk({
         clientID: '#{theme.gitalk.client_id}',
         clientSecret: '#{theme.gitalk.client_secret}',
-        repo: '#{theme.gitalk.repo}',
-        owner: '#{theme.gitalk.owner}',
-        admin: ['#{theme.gitalk.owner}'],
+        repo: '#{theme.comment_repo.repo}',
+        owner: '#{theme.comment_repo.owner}',
+        admin: ['#{theme.comment_repo.owner}'],
+        labels: ['#{theme.comment_repo.label}'],
         id: window.location.pathname,      
         distractionFreeMode: false,
-        labels: ['comment'],
       })
       gitalk.render('container')
 
