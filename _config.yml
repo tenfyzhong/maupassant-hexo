@@ -63,7 +63,8 @@ widgets: ## Six widgets in sidebar provided: search, category, tag, recent_posts
   - category
   - tag
   - recent_posts
-  - wechat_official_account
+
+# - wechat_official_account
 
 socials:
   - title: Github
