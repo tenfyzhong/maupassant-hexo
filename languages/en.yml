@@ -4,6 +4,7 @@ albums: Albums
 categories: Categories
 tags: Tags
 archive: Archive
+subject: Subject
 links: Links
 about: About
 recent: Recent

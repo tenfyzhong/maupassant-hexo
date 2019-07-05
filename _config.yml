@@ -47,6 +47,9 @@ menu:
   - page: home
     directory: .
     icon: fa-home
+  - page: subject
+    directory: subjects/
+    icon: fa-tasks
   - page: archive
     directory: archives/
     icon: fa-archive
