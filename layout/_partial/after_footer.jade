@@ -67,10 +67,10 @@ if theme.canvas_nest.enable == true
     - var count=theme.canvas_nest.count || "50"
     script(type='text/javascript', color='#{color}', opacity='#{opacity}', zIndex='#{zIndex}', count='#{count}',src='//cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js')
 
-if page.mathjax
+if page.mathjax || theme.mathjax
   include mathjax
 
-if page.mathjax2
+if page.mathjax2 || theme.mathjax2
   include mathjax2
 
 if theme.leancloud.enable == true
