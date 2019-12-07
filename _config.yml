@@ -68,6 +68,7 @@ widgets: ## Six widgets in sidebar provided: search, category, tag, recent_posts
   - category
   - tag
   - recent_posts
+  - links
 
 # - wechat_official_account
 
@@ -89,9 +90,9 @@ leancloud:
   appid: Glommc9CciMESa6zShJxuhKb-gzGzoHsz
   appkey: prxRn0mO6lSIIz4PEL8yqjxX
 
-# links:
-#   - title: site-name1
-#     url: http://www.example1.com/
+links:
+  - title: An's blog
+    url: https://bigbuger.github.io
 #   - title: site-name2
 #     url: http://www.example2.com/
 #   - title: site-name3
